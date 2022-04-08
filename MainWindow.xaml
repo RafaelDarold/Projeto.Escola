@@ -1,0 +1,117 @@
+﻿<Window x:Class="Projeto_Escola_Rafael.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projeto_Escola_Rafael"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" HorizontalAlignment="Center" Content="Linha 01 - Cadastro de escola" FontSize="20"/>
+
+        <Grid Grid.Row="1" Background="#EFF1ED">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Label Content="Informações de Registros" FontSize="20"/>
+
+                <Label Content="Nome Fantasia" FontSize="16"/>
+                <TextBox x:Name="txtNomeFantasia" Padding="8" KeyDown="txtNomeFantasia_KeyDown"/>
+
+                <Label Content="Razão Social" FontSize="16"/>
+                <TextBox x:Name="txtRazaoSocial" Padding="8" KeyDown="txtRazaoSocial_KeyDown"></TextBox>
+
+                <Label Content="CNPJ" FontSize="16"/>
+                <TextBox x:Name="txtCnpj" Padding="8" KeyDown="txtCnpj_KeyDown"></TextBox>
+
+                <Label Content="Inscrição estadual" FontSize="16"/>
+                <TextBox x:Name="txtInscricaoEstadual" Padding="8" KeyDown="txtInscricaoEstadual_KeyDown"></TextBox>
+
+                <Label Content="Responsável" FontSize="16"/>
+                <TextBox x:Name="txtResponsavel" Padding="8" KeyDown="txtResponsavel_KeyDown"></TextBox>
+
+                <Label Content="Telefone do responsável" FontSize="16"/>
+                <TextBox x:Name="txtTelefoneDoResponsavel" Padding="8" KeyDown="txtTelefoneDoResponsavel_KeyDown"></TextBox>
+
+                <Label Content="Data de criação" FontSize="16"/>
+                <DatePicker x:Name="dpDataDeCriacao" Padding="8"/>
+
+                <Label Content="Tipo" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="tipo1" IsChecked="True" GroupName="rdTipo">Publica</RadioButton>
+                    <RadioButton x:Name="tipo2" GroupName="rdTipo">Privado</RadioButton>
+                </StackPanel>
+
+            </StackPanel>
+
+            <Button x:Name="Bt_avancar" Content="avançar" Height="29" HorizontalAlignment="Left" Width="87" Margin="10,595,0,60" Background="#FFD0CBCB" Click="Bt_avancar_Click"/>
+
+
+            <StackPanel Grid.Column="1">
+                <Label Content="Informações de Localização" FontSize="20"/>
+
+                <Label Content="Bairro" FontSize="16"/>
+                <TextBox x:Name="txtBairro" Padding="8" KeyDown="txtBairro_KeyDown"></TextBox>
+
+                <Label Content="Rua" FontSize="16"/>
+                <TextBox x:Name="txtRua" Padding="8" KeyDown="txtRua_KeyDown"></TextBox>
+
+                <Label Content="Numero" FontSize="16"/>
+                <TextBox x:Name="txtNumero" Padding="8" KeyDown="txtNumero_KeyDown"></TextBox>
+
+                <Label Content="CEP" FontSize="16"/>
+                <TextBox x:Name="txtCep" Padding="8" KeyDown="txtCep_KeyDown"></TextBox>
+
+                <Label Content="Complemento" FontSize="16"/>
+                <TextBox x:Name="txtComplemento" Padding="8" KeyDown="txtComplemento_KeyDown"></TextBox>
+
+                <Label Content="Estado" FontSize="16"/>
+                <ComboBox x:Name="cbEstado" Padding="8">
+                    <ComboBoxItem>Acre (AC)</ComboBoxItem>
+                    <ComboBoxItem>Alagoas (AL)</ComboBoxItem>
+                    <ComboBoxItem>Amapá (AP)</ComboBoxItem>
+                    <ComboBoxItem>Amazonas (AM)</ComboBoxItem>
+                    <ComboBoxItem>Bahia (BA)</ComboBoxItem>
+                    <ComboBoxItem>Ceará (CE)</ComboBoxItem>
+                    <ComboBoxItem>Distrito Federal (DF)</ComboBoxItem>
+                    <ComboBoxItem>Espírito Santo (ES)</ComboBoxItem>
+                    <ComboBoxItem>Goiás (GO)</ComboBoxItem>
+                    <ComboBoxItem>Maranhão (MA)</ComboBoxItem>
+                    <ComboBoxItem>Mato Grosso (MT)</ComboBoxItem>
+                    <ComboBoxItem>Mato Grosso Do Sul (MS)</ComboBoxItem>
+                    <ComboBoxItem>Minas Gerais (MG)</ComboBoxItem>
+                    <ComboBoxItem>Pará (PA)</ComboBoxItem>
+                    <ComboBoxItem>Paraíba (PB)</ComboBoxItem>
+                    <ComboBoxItem>Paraná (PR)</ComboBoxItem>
+                    <ComboBoxItem>Pernambuco (PE)</ComboBoxItem>
+                    <ComboBoxItem>Piauí (PI)</ComboBoxItem>
+                    <ComboBoxItem>Rio de Janeiro (RJ)</ComboBoxItem>
+                    <ComboBoxItem>Rio Grande do Norte (RN)</ComboBoxItem>
+                    <ComboBoxItem>Rio Grande Do Sul (RS)</ComboBoxItem>
+                    <ComboBoxItem>Rondônia (RO)</ComboBoxItem>
+                    <ComboBoxItem>Roraima (RR)</ComboBoxItem>
+                    <ComboBoxItem>Santa Catarina (SC)</ComboBoxItem>
+                    <ComboBoxItem>São Paulo (SP)</ComboBoxItem>
+                    <ComboBoxItem>Sergipe (SE)</ComboBoxItem>
+                    <ComboBoxItem>Tocantins (TO)</ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel VerticalAlignment="Center"  HorizontalAlignment="Right"  Width="150" Margin="0,0,20,0" Grid.Row="2">
+                <Button Content="Salvar" Height="29" Background="#FF17E81A" Click="Bt_salvar"/>
+            </StackPanel>
+            <Button Content="Sair" Height="29" HorizontalAlignment="Left" Width="150" Margin="20,0,0,0" Background="#FFFF0C00" Click="BtSair"/>
+        </Grid>
+    </Grid>
+</Window>
